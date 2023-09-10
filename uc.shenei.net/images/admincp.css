@@ -173,7 +173,7 @@ h3{ font-size:14px; }
 .green{ color:green; }
 
 
-.tabhead {width: 100%; clear: both; background: url(images/bg_tab_line.gif) repeat-x bottom;}
+.tabhead {width: 100%; clear: both; background: url(../../http//uc.shenei.net/images/images/bg_tab_line.gif) repeat-x bottom;}
 	.tabhead li{line-height: 1.2em; display:block; padding:5px 7px 2px 7px; border:1px solid #CCC; border-bottom:0px solid #B5CFD9; color:#666;  float:left; margin-right:5px;}
 	.tabhead li.checked{background:#F2F9FD; font-weight: 800}
 .tabbody {padding: 1em; clear: both; border:1px solid #B5CFD9; border-top: 0px; background:#F2F9FD; }
