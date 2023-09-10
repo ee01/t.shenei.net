@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><!-- saved from url=(0031)http://t.shenei.net/default.htm --><meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="迷你博客,微博客,开源迷你博客" />
+<meta name="description" content="直播你的生活" />
+<title>舍内一句话 - In a word</title>
+<link rel="shortcut icon" href="public/images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="public/images/welcome.css" />
+<script type="text/javascript" src="public/js/jquery.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <a href="index.phps.htm"><div id="header"></div></a>
+    <div class="rightbox">
+        <div class="rightbox_1">
+            <form method="post" action="index.php@s=_2Fdologin">
+            <table border="0" width="200px">
+                <tr height="100px" valign="top">
+                    <td><a href="index.phps_2fregister.htm" class="btn-reg">注册微博</a></td>
+                </tr>
+                <tr height="40px">
+                    <td valign="top">
+                    <input tabindex="1" type="text" name="loginname" class="input_text" value="支持微博帐号 / Ucenter帐号" style="width:185px" onfocus="if($(this).val()=='支持微博帐号 / 邮箱地址' || $(this).val()=='支持微博帐号 / Ucenter帐号'){$(this).val('')}" onblur="if($(this).val()==''){$(this).val('支持微博帐号 / Ucenter帐号')}"/>
+                    </td>
+                </tr>
+                <tr height="80px">
+                    <td valign="top">
+                    <input tabindex="2" type="password" name="password" class="input_text" value="******" maxlength="20" style="width:185px" onfocus="if($(this).val()=='******'){$(this).val('')}"/>
+                    <div style="margin-top:15px">
+                        <label class="label_check" for="rememberMe">
+                        <input tabindex="3" type="checkbox" name="rememberMe" id="rememberMe" value="on" class="checkbox"/>&nbsp;&nbsp;下次自动登录&nbsp;&nbsp;&nbsp;<a href="index.phps_2freset.htm" id="forgot">忘记密码？</a>
+                        </label>
+                    </div>
+                    </td>
+                </tr>
+                <tr height="30px">
+                    <td align="center"><input type="hidden" name="action" value="login" /><input tabindex="4" type="submit" class="button1" value="立即登录" /></td>
+                </tr>
+            </table>
+            <input type="hidden" name="__hash__" value="3105397e2abb1afdf2812db00783eea0" /></form>
+        </div>
+        <div class="rightbox_2">
+            <p><img src="public/images/phone.png">&nbsp;&nbsp;如何用手机上微博</p>
+            <p style="text-indent:24px">http://t.shenei.net/m</p>
+            <p><img src="public/images/help.gif">&nbsp;&nbsp;新手帮助：<a href="index.phps_2findex_2ffaq.htm">点击进入</a></p>
+            <p><img src="public/images/favor.gif">&nbsp;&nbsp;关于我们：<a href="index.phps_2findex_2fabout.htm">点击进入</a></p>
+        </div>
+    </div>
+    <div class="weltop">
+        <div class="hottopic"><ul></ul><div class="clearline"></div></div>
+    </div>
+    <div class="welbody">
+        <div class="hotuser">
+            <div class="hotuserico">有趣的人</div>
+            <div class="userlist"><ul></ul></div>
+        </div>
+        <div class="hottalk">
+            <div class="theysay">他们正在说：</div>
+            <div class="marqueegb"><ul><li><div class="indexgbli"><table border="0" width="100%"><tr><td width="60px" valign="top"><a href="index.phps_2f01.htm"><img src="./uc.shenei.net/data/avatar/000/00/00/01_avatar_middle.jpg"></a></td><td valign="top"><a href="index.phps_2f01.htm" class="vip">01</a>&nbsp;&nbsp;a a@e5201 <img class='emo' src='public/images/emotion/6.gif' alt='(大笑)'><div class="sp">04月17日 16:18&nbsp;&nbsp;通过网页</div></td></tr></table></div></li></ul></div>
+        </div>
+    </div>
+    <div class="welbottom"></div>
+    <div id="indexbottom">
+        Powered by <a href="http://www.nextsns.com/" target="_blank">EasyTalk X1.3</a>.&copy; 2009-2011 <a href="http://www.nextsns.com/" target="_blank">Nextsns.com</a>&nbsp;&nbsp;&nbsp;<a href="default.htm">舍内一句话</a>&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank">正在备案...</a>&nbsp;    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    //talk
+    if ($(".marqueegb ul li").length>3) {
+        var firstli;
+        var tksi;
+        firstli=$(".marqueegb ul li").first();
+        firstli.before("<li>"+$(".marqueegb ul li").last().html()+"</li>");
+        $(".marqueegb ul li").last().remove();
+        firstli.before("<li>"+$(".marqueegb ul li").last().html()+"</li>");
+        $(".marqueegb ul li").last().remove();
+        firstli.before("<li>"+$(".marqueegb ul li").last().html()+"</li>");
+        $(".marqueegb ul li").last().remove();
+        function tkscroll() {
+            tksi=setInterval(function(){
+                firstli=$(".marqueegb ul li").first();
+                $(".marqueegb ul li").first().slideDown(1000);
+                firstli.before("<li style='display:none'>"+$(".marqueegb ul li").last().html()+"</li>");
+                $(".marqueegb ul li").last().remove();
+            }, 4000);
+        }
+        $("a").focus(function(){this.blur()});
+        $('.marqueegb').mouseover(function(){clearInterval(tksi)});
+        $('.marqueegb').mouseout(function(){tkscroll()});
+        tkscroll();
+    }
+    //topic
+    var topiculw=0;
+    var l=0;
+    var firstl12;
+    var tpsi;
+    $('.hottopic ul li').each(function(){
+        topiculw=topiculw+$(this).width()+10;
+    });
+    $('.hottopic ul').width(topiculw+'px');
+    function tpscroll() {
+        tpsi=setInterval(function(){
+            l=l+1;
+            firstl12=$('.hottopic ul li').first();
+            firstl12.css('margin-left',-l);
+            if (l==firstl12.width()+10) {
+                $('.hottopic ul').append(firstl12);
+                $('.hottopic ul li').last().removeAttr('style');
+                l=0;
+            }
+        },50);
+    }
+    if (topiculw>=530) {
+        $('.hottopic').mouseover(function(){clearInterval(tpsi)});
+        $('.hottopic').mouseout(function(){tpscroll()});
+        tpscroll();
+    }
+});
+</script>
+</body>
+</html>
