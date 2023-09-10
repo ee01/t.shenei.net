@@ -1,0 +1,74 @@
+<include file="Common:header" />
+<div class="friends">
+<div id="stream">
+    <div class="itemtitle">
+        <div class="titleline">
+            <div class="line"></div>
+            <div class="h4">达人总榜</div>
+            <div class="h5"><select id="topcity">
+            <option value="">不限</option><option value="江苏省">江苏省</option><option value="北京">北京</option><option value="天津">天津</option><option value="上海">上海</option><option value="重庆">重庆</option><option value="广东省">广东省</option><option value="浙江省">浙江省</option><option value="福建省">福建省</option><option value="湖南省">湖南省</option><option value="湖北省">湖北省</option><option value="山东省">山东省</option><option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option><option value="云南省">云南省</option><option value="四川省">四川省</option><option value="安徽省">安徽省</option><option value="江西省">江西省</option><option value="黑龙江省">黑龙江省</option><option value="河北省">河北省</option><option value="陕西省">陕西省</option><option value="海南省">海南省</option><option value="河南省">河南省</option><option value="山西省">山西省</option><option value="内蒙古">内蒙古</option><option value="广西">广西</option><option value="贵州省">贵州省</option><option value="宁夏">宁夏</option><option value="青海省">青海省</option><option value="新疆">新疆</option><option value="西藏">西藏</option><option value="甘肃省">甘肃省</option><option value="台湾省">台湾省</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="国外">国外</option>
+            </select></div>
+        </div>
+    </div>
+    <div class="ranklist">
+        <h4><span class="more">听众总数</span>认证名人榜</h4>
+        <ul class="top_list">
+        <php>foreach($top1 as $key=>$val){</php>
+            <php>if($key<=2){</php>
+            <li>
+                <div class="topavatar"><a href="<{:SITE_URL}>/<{$val[user_name]}>"><img src="<{:sethead($val[user_head])}>"/></a></div>
+                <p><em><{$val[followme_num]}></em><a href="<{:SITE_URL}>/<{$val[user_name]}>" class="vip"><{$val[nickname]}></a></p>
+            </li>
+            <php>}else{</php>
+            <li>
+                <span><{:($key+1)}></span>
+                <em><{$val[followme_num]}></em>
+                <a href="<{:SITE_URL}>/<{$val[user_name]}>" class="vip"><{$val[nickname]}></a>
+            </li>
+            <php>}</php>
+        <php>}</php>
+        </ul>
+    </div>
+    <div class="ranklist">
+        <h4><span class="more">听众总数</span>人气之星榜</h4>
+        <ul class="top_list">
+        <php>foreach($top2 as $key=>$val){</php>
+            <php>if($key<=2){</php>
+            <li>
+                <div class="topavatar"><a href="<{:SITE_URL}>/<{$val[user_name]}>"><img src="<{:sethead($val[user_head])}>"/></a></div>
+                <p><em><{$val[followme_num]}></em><a href="<{:SITE_URL}>/<{$val[user_name]}>"><{$val[nickname]}></a></p>
+            </li>
+            <php>}else{</php>
+            <li>
+                <span><{:($key+1)}></span>
+                <em><{$val[followme_num]}></em>
+                <a href="<{:SITE_URL}>/<{$val[user_name]}>"><{$val[nickname]}></a>
+            </li>
+            <php>}</php>
+        <php>}</php>
+        </ul>
+    </div>
+    <div class="ranklist" style="margin-right:0px">
+        <h4><span class="more">广播总数</span>微博达人榜</h4>
+        <ul class="top_list">
+        <php>foreach($top3 as $key=>$val){</php>
+            <php>if($key<=2){</php>
+            <li>
+                <div class="topavatar"><a href="<{:SITE_URL}>/<{$val[user_name]}>"><img src="<{:sethead($val[user_head])}>"/></a></div>
+                <p><em><{$val[msg_num]}></em><a href="<{:SITE_URL}>/<{$val[user_name]}>" class="<{:setvip($val[user_auth])}>"><{$val[nickname]}></a></p>
+            </li>
+            <php>}else{</php>
+            <li>
+                <span><{:($key+1)}></span>
+                <em><{$val[msg_num]}></em>
+                <a href="<{:SITE_URL}>/<{$val[user_name]}>" class="<{:setvip($val[user_auth])}>"><{$val[nickname]}></a>
+            </li>
+            <php>}</php>
+        <php>}</php>
+        </ul>
+    </div>
+    <div class="clearline"></div>
+</div>
+</div>
+<script type="text/javascript">$('#topcity').val('<{$topcity}>');</script>
+<include file="Common:foot" />

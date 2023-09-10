@@ -1,0 +1,53 @@
+<include file="Common:header" />
+<php>if(!$my[user_id]){</php>
+<div id="homelogin">
+<div class="main">
+    <div class='left'>
+    <p><h2>Hi！这是“<{$user['nickname']}>”的生活点滴。</h2></p>
+    <p><{$site['sitename']}>称之微博也好，便签也好，这里记录的这些小声音都会成为难忘的记忆。在这里，你可以通过手机、网页等随时随地发消息，时时刻刻看朋友。关注<{$user['nickname']}>的最新消息。</p>
+    </div>
+    <div class='right'>
+    <a href="<{:SITE_URL}>/register/<{$user['user_name']}>"><img src="<{:__PUBLIC__}>/images/button-register.gif" alt="注册"></a><br/>有帐号了，请<a href="<{:SITE_URL}>/login">点击这里登陆</a>
+    </div>
+</div>
+</div>
+<php>}</php>
+
+<table id="columns"><tr>
+<td id="main">
+    <include file="Space:prohead" />
+    <div class="contenter">
+        <div class="title">
+        <h3 class="fleft"><{$user[nickname]}>说</h3>
+        <div class="fright" style="margin-top:10px">
+            查看类型：
+            <select id="lookmore">
+            <option value="a">所有广播</option>
+            <option value="p">图片广播</option>
+            <option value="m">媒体广播</option>
+            <option value="o">原创广播</option>
+            <option value="r">转播广播</option>
+            </select>
+        </div>
+        </div>
+        <div id="stream" class="message">
+            <ol class="wa">
+            <php>if(count($content)>0){</php>
+                <php>foreach($content as $val){echo $ctent->loadoneli($val);}</php>
+            <php>}else{</php>
+                <li class="unlight" id="nonemsg">这里还没有任何广播</li>
+            <php>}</php>
+            </ol>
+        </div>
+    </div>
+</td>
+<td id="sidebar" rowspan="2"><include file="Space:proside" /></td>
+</tr>
+<tr>
+<td height="36px">
+    <div id="indexpage" class="page"><{$page}></div>
+</td>
+</tr>
+</table>
+<script type="text/javascript">$("#lookmore").val('<{$t}>');</script>
+<include file="Common:foot" />

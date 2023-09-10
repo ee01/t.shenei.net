@@ -1,0 +1,6 @@
+将以下代码添加在 nginx.conf 配置中
+
+if (!-e $request_filename) {
+    rewrite  ^/(.*)$  /index.php?u=$1  last;
+    break;
+}

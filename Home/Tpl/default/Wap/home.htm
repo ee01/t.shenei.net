@@ -1,0 +1,19 @@
+<include file="header" />
+<h2>你在做什么？</h2>
+<form method='post' action='<{:SITE_URL}>/Wap/sendmsg'>
+    <p><input type='text' name='content' value='' maxlength='140'/></p>
+    <p><input type='submit' value='发送' /></p>
+</form>
+<h2>我的主页(<a href='<{:SITE_URL}>/Wap/home'>刷新</a>)</h2>
+<ul>
+<php>if(count($content)>0){</php>
+    <php>foreach($content as $val){
+        echo $ctent->wapli($val,$my['user_id'],'home',1);
+    }</php>
+<php>}else{</php>
+    <span class="stamp">这里暂时还没有广播</span>
+<php>}</php>
+<div class="page"><{$page}></div>
+</ul>
+</div>
+<include file="footer" />

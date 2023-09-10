@@ -1,0 +1,32 @@
+<include file="Common:header" />
+<div id="register">
+    <div class="indexh" style="margin-bottom:20px">
+        <div class="tabon">快速注册</div>
+        <div class="taboff"><a href="<{:SITE_URL}>/login">登陆微博</a></div>
+        <div class="taboff"><a href="<{:SITE_URL}>/reset">忘记密码</a></div>
+    </div>
+    <form action="<{:SITE_URL}>/register" method="POST">
+    <table border="0" style="width:90%;margin-left:40px;margin-bottom:20px">
+    <tr><td valign="top">
+    <h3 class="tt">欢迎您加入<{$site[sitename]}>，您必须激活帐号才能登陆。</h3>
+    <table class="regtb">
+        <tr height="50px">
+            <th>激活帐号：</th>
+            <td width="210px"><{$activeuser}></td>
+        </tr>
+        <tr height="50px">
+            <th>输入密码：</th>
+            <td width="210px"><input type="password" name="password" class="input_text"/></td>
+        </tr>
+        <tr height="50px">
+            <td></td>
+            <td colspan="1"><input type="hidden" name="activation" value="<{$activeuser}>">
+            <input type="hidden" name="auth" value="<{:urlencode($auth)}>">
+            <input type="submit" class="button1" value="立即激活"/></td>
+        </tr>
+    </table>
+    </td></tr>
+    </table>
+    </form>
+</div>
+<include file="Common:foot" />

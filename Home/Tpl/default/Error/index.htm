@@ -1,0 +1,33 @@
+<include file="Common:header" />
+<div class="error">
+    <php>if($type=='nouser'){</php>
+    <h2>用户不存在</h2>
+    <h4 style="margin-top:10px"><a onclick="var len=history.length;if(len>1 || (len==1 && navigator.userAgent.indexOf('MSIE')!=-1)){history.go(-1);return false;}else{location.href='/'}" href="##">返回到之前浏览的页面</a></h4>
+    <br/><p>或者进入：</p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/<{$my[user_name]}>">我的主页</a></p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/Pub">看看大家在说什么</a></p>
+    <php>}else if ($type=='nocontent'){</php>
+    <h2>您查看的广播不存在</h2>
+    <h4 style="margin-top:10px"><a onclick="var len=history.length;if(len>1 || (len==1 && navigator.userAgent.indexOf('MSIE')!=-1)){history.go(-1);return false;}else{location.href='/'}" href="##">返回到之前浏览的页面</a></h4>
+    <br/><p>或者进入：</p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/<{$my[user_name]}>">我的主页</a></p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/Pub">看看大家在说什么</a></p>
+    <php>}else if ($type=='userlock'){</php>
+    <h2>您访问的用户已被锁定</h2>
+    <h4 style="margin-top:10px"><a onclick="var len=history.length;if(len>1 || (len==1 && navigator.userAgent.indexOf('MSIE')!=-1)){history.go(-1);return false;}else{location.href='/'}" href="##">返回到之前浏览的页面</a></h4>
+    <br/><p>或者进入：</p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/<{$my[user_name]}>">我的主页</a></p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/Pub">看看大家在说什么</a></p>
+    <php>}else if ($type=='webclose'){</php>
+    <h2>很抱歉，网站暂时关闭</h2>
+    <br/><p>或者进入：</p>
+    <p>●&nbsp;&nbsp;<a onclick="var len=history.length;if(len>1 || (len==1 && navigator.userAgent.indexOf('MSIE')!=-1)){history.go(-1);return false;}else{location.href='/'}" href="##">之前浏览的页面</a></p>
+    <p>●&nbsp;&nbsp;<a href="<{:SITE_URL}>/login">管理员登陆</a></p>
+    <br/><p>感谢您的支持，请稍候再回来...</p>
+    <php>}else if ($type=='closereg'){</php>
+    <h2>很抱歉，管理员关闭了在线注册</h2>
+    <h4 style="margin-top:10px"><a onclick="var len=history.length;if(len>1 || (len==1 && navigator.userAgent.indexOf('MSIE')!=-1)){history.go(-1);return false;}else{location.href='/'}" href="##">返回到之前浏览的页面</a></h4>
+    <br/><p>感谢您的支持，请稍候再回来...</p>
+    <php>}</php>
+</div>
+<include file="Common:foot" />

@@ -69,7 +69,7 @@ function setpic() {
         var u=this.style.backgroundImage.replace("thumb_","theme_");
         $("body").css("background",t+" "+ u);
         $("#user-background-repeat").attr("checked", true);
-        $("#newbgurl").val(document.getElementById("setbgyes").style.backgroundImage.replace(siteurl,"").replace("url(","").replace(")","").replace("../../thumb_themebg.jpg","").replace('"','').replace('"',''));
+        $("#newbgurl").val(document.getElementById("setbgyes").style.backgroundImage.replace(siteurl,"").replace("url(","").replace(")","").replace("/thumb_themebg.jpg","").replace('"','').replace('"',''));
         closealert();
     });
     $("#setbgno").click(function() {

@@ -1,0 +1,59 @@
+<include file="Common:header" />
+<div class="friends">
+    <div class="indexh">
+        <div class="tabon">找朋友</div>
+        <div class="taboff"><a href="<{:SITE_URL}>/Find/invite">邀请好友</a></div>
+    </div>
+    <div id="stream" class="message">
+        <div class="searchbox">
+        <div style="padding:15px 50px">
+            <div style="color:#999999;margin-bottom:5px">你在找谁？请输入对方的姓名或帐号</div>
+            <form method="POST" action="<{:SITE_URL}>/Find/search">
+                <input class="input_text" type="text" style="width:300px" name="sname" value="<{$searchname}>"/>
+                <input class="button2" type="submit" value="点击搜索"/>
+           </form>
+           <div style="margin-top:5px">想找更多的朋友来分享微博吗？马上<a href="<{:SITE_URL}>/Find/invite">邀请好友开通</a></div>
+        </div>
+        </div>
+        <table border="0" width="100%" height="500px">
+        <tr>
+        <td valign="top">
+            <h3>共搜索到 <font color="#ff0000"><{$count}></font> 个用户</h3>
+            <ol class="wa">
+            <php>if($count>0){</php>
+                <php>foreach($users as $val){</php>
+                <li class="unlight">
+                    <a href="<{:SITE_URL}>/<{$val['user_name']}>" title="<{$val['nickname']}>" class="avatar"><img src="<{:sethead($val['user_head'])}>" alt="<{$val['nickname']}>" width="48px" /></a>
+                    <a href="<{:SITE_URL}>/<{$val['user_name']}>" style="margin-left:5px" class="<{:setvip($val[user_auth])}>"><{:str_replace($_GET['sname'],'<font color="red">'.$_GET['sname'].'</font>',$val['nickname'])}></a><small>(@<{$val['user_name']}>)</small>
+                    <p class="actions">
+                    <span style="color:#999999;margin-left:5px">
+                    收听 <a href="<{:SITE_URL}>/<{$val['user_name']}>/following"><b><{$val['follow_num']}></b></a> 人&nbsp;&nbsp;&nbsp;&nbsp;听众 <a href="<{:SITE_URL}>/<{$val['user_name']}>/follower"><b><{$val['followme_num']}></b></a> 人&nbsp;&nbsp;&nbsp;&nbsp;广播 <a href="<{:SITE_URL}>/<{$val['user_name']}>"><b><{$val['msg_num']}></b></a> 条
+                    </span>
+                    <php>if($val[user_id]!=$my[user_id]){</php>
+                        <span id='followsp_<{$val[user_name]}>' style="display:block;float:right;">
+                            <php>if($isfollower[$val[user_id]]==1){</php>
+                            <span class="followbtn"><img src="<{:__PUBLIC__}>/images/fico2.gif"> 已收听&nbsp;|&nbsp;<a href="javascript:void(0)" onclick="followop('delfollow/user_name/<{$val[user_name]}>','确认要解除收听 <{$val['nickname']}> 吗？','jc','<{$val[user_name]}>','<{$val['nickname']}>','<{:$isfollower[$val[user_id]]}>')">取消</a></span>
+                            <php>}else if ($isfollower[$val[user_id]]==3){</php>
+                            <span class="followbtn"><img src="<{:__PUBLIC__}>/images/fico.gif"> 互相收听&nbsp;|&nbsp;<a href="javascript:void(0)" onclick="followop('delfollow/user_name/<{$val[user_name]}>','确认要解除收听 <{$val['nickname']}> 吗？','jc','<{$val[user_name]}>','<{$val['nickname']}>','<{:$isfollower[$val[user_id]]}>')">取消</a></span>
+                            <php>}else{</php>
+                            <a class="bh" onclick="followop('addfollow/user_name/<{$val[user_name]}>','','gz','<{$val[user_name]}>','<{$val['nickname']}>','<{:$isfollower[$val[user_id]]}>')">收听一下</a>
+                            <php>}</php>
+                        </span>
+                    <php>}</php>
+                    </p>
+                </li>
+                <php>}</php>
+            <php>}else{</php>
+            <li class="unlight" id="nonemsg">很抱歉，没有搜索到你想要的结果！</li>
+            <php>}</php>
+            </ol>
+        </td>
+        </tr>
+        <tr>
+            <td height="36px"><div class="page"><{$page}></div></td>
+        </tr>
+        </table>
+    </div>
+    <div class="clearline"></div>
+</div>
+<include file="Common:foot" />

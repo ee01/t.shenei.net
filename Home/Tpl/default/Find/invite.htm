@@ -1,0 +1,25 @@
+<include file="Common:header" />
+<div class="friends">
+    <div class="indexh">
+        <div class="taboff"><a href="<{:SITE_URL}>/Find">找朋友</a></div>
+        <div class="tabon">邀请好友</div>
+    </div>
+    <div id="stream" class="message">
+        <div class="finder_block">
+            <h3>方式一：复制下面的邀请内容，通过QQ、MSN、网站等发给你的朋友</h3>
+            <textarea id="method1" onfocus="ETCopy('method1')" style="height:50px;margin-top:10px;width:505px;*margin-left:-80px;*margin-right:-80px"><{$site[inviteword]}> <{:SITE_URL}>/register/<{$my[user_name]}></textarea>
+            <input type="button" style="float:right;margin:10px auto;*margin-left:420px;*margin-right:-85px" class="button2" onclick="ETCopy('method1')" value="复制链接" />
+            <div class="clearline"></div>
+        </div>
+        <div class="finder_block">
+        <h3>方式二：直接在下面输入朋友的邮箱地址，系统将自动通过邮件发邀请</h3>
+        <form action="<{:SITE_URL}>/Find/doinvite" method="POST">
+            <p>请输入收信人Email，多个Email用英文逗号分隔：</p>
+            <textarea name="email" style="height:40px;margin-top:10px;width:505px;font-size:14px"></textarea>
+            <input type="submit" style="float:right;margin:10px auto" class="button2" value="发送邀请" />
+        </form>
+        <div class="clearline"></div>
+        </div>
+    </div>
+</div>
+<include file="Common:foot" />

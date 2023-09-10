@@ -1,0 +1,90 @@
+<include file="Common:header" />
+<script src="<{:__PUBLIC__}>/js/city.js" type="text/javascript"></script>
+<table id="columns">
+<tr>
+    <td id="main">
+        <div class="contenter">
+            <div class="pubtop">
+                <img src="<{:__PUBLIC__}>/images/indexdr.png">
+                <ul class="imgList" id="imgList">
+                    <php>foreach($pubtop as $val){</php>
+                    <li><a href="<{:SITE_URL}>/<{$val[user_name]}>"><img src="<{:sethead($val[user_head])}>" width="88" height="88" /></a><p class="pbg"><a href="<{:SITE_URL}>/<{$val[user_name]}>" style="color:#ffffff"><{$val[nickname]}></a></p></li>
+                    <php>}</php>
+                </ul>
+            </div>
+            <div class="indexh">
+                <php>if($t=='index'){</php><span class="tabon">大家在说</span><php>}else{</php><span class="taboff"><a href="<{:SITE_URL}>/Pub">大家在说</a></span><php>}</php>
+                <php>if($t=='hot'){</php><span class="tabon">热门广播</span><php>}else{</php><span class="taboff"><a href="<{:SITE_URL}>/Pub?t=hot">热门广播</a></span><php>}</php>
+                <php>if($t=='city'){</php><span class="tabon">同城广播</span><php>}else{</php><span class="taboff"><a href="<{:SITE_URL}>/Pub?t=city&c=<{$myc}>">同城广播</a></span><php>}</php>
+            </div>
+            <php>if($_GET['q']){</php>
+                <div class="indexsearch">以下是包含有 "<font color="red"><b><{$_GET['q']}></b></font>" 字符的广播</div>
+            <php>}else if ($t=='city') {</php>
+                <div class="indexsearch">
+                <ul class="pubcity">
+                    <li <php>if(!$c){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city">全部</a></li>
+                    <li <php>if($c=='北京'){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city&c=北京">北京</a></li>
+                    <li <php>if($c=='上海'){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city&c=上海">上海</a></li>
+                    <li <php>if($c=='广州'){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city&c=广州">广州</a></li>
+                    <li <php>if($c=='南京'){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city&c=南京">南京</a></li>
+                    <li <php>if($c=='江苏'){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city&c=江苏">江苏</a></li>
+                    <li <php>if($c=='四川'){</php>class='selected'<php>}</php>><a href="<{:SITE_URL}>/Pub?t=city&c=四川">四川</a></li>
+                    <php>if($c && $c!='北京' && $c!='上海' && $c!='广州' && $c!='南京' && $c!='江苏' && $c!='四川'){</php>
+                    <li class='selected'><a href="<{:SITE_URL}>/Pub?t=city&c=<{$c}>"><{$c}></a></li>
+                    <php>}</php>
+                </ul>
+                <div class="citymore">
+                    <div class="more"></div>
+                    <div class="citys">
+                    <select name="livesf" id="livesf" onchange="changelivecity()">
+                    <option value="">选择省份</option><option value="江苏省">江苏省</option><option value="北京">北京</option><option value="天津">天津</option><option value="上海">上海</option><option value="重庆">重庆</option><option value="广东省">广东省</option><option value="浙江省">浙江省</option><option value="福建省">福建省</option><option value="湖南省">湖南省</option><option value="湖北省">湖北省</option><option value="山东省">山东省</option><option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option><option value="云南省">云南省</option><option value="四川省">四川省</option><option value="安徽省">安徽省</option><option value="江西省">江西省</option><option value="黑龙江省">黑龙江省</option><option value="河北省">河北省</option><option value="陕西省">陕西省</option><option value="海南省">海南省</option><option value="河南省">河南省</option><option value="山西省">山西省</option><option value="内蒙古">内蒙古</option><option value="广西">广西</option><option value="贵州省">贵州省</option><option value="宁夏">宁夏</option><option value="青海省">青海省</option><option value="新疆">新疆</option><option value="西藏">西藏</option><option value="甘肃省">甘肃省</option><option value="台湾省">台湾省</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="国外">国外</option>
+                    </select>
+                    <select name="livecity" id="livecity"><option value="">选择城市</option></select>
+                    <button id="selectcity">确 定</button>
+                    </div>
+                    </div>
+                <div class="clearline"></div>
+                </div>
+            <php>}</php>
+            <div id="stream" class="message">
+                <ol class="wa">
+                    <php>if(count($content)>0){</php>
+                        <php>foreach($content as $val){</php><{:$ctent->loadoneli($val)}><php>}</php>
+                    <php>}else{</php>
+                        <li class="unlight" id="nonemsg">这里还没有任何广播</li>
+                    <php>}</php>
+                </ol>
+            </div>  
+        </div>
+        </td>
+        <td id="sidebar" rowspan="2">
+        <div class="contenter">
+            <!-- 侧边啦 -->
+            <{$pubside}>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td height="36px"><div id="indexpage" class="page"><{$page}></div></td>
+</tr>
+</table>
+<script type="text/javascript">
+$('.more').toggle(function() {$('.citys').show();},function(){$('.citys').hide();});
+$('#livesf').change(function(){
+    $('#livecity').prepend('<option>不限</option>');
+});
+$('#selectcity').click(function(){
+    var city=$('#livecity').val();
+    var sf=$('#livesf').val();
+    var urlc=siteurl+'/Pub?t=city&c='+city;
+    var urls=siteurl+'/Pub?t=city&c='+sf;
+    if (city!='' && city!='不限') {
+        window.location.href=urlc;
+    } else {
+        if (sf!='') {
+            window.location.href=urls;
+        }  
+    }
+});
+</script>
+<include file="Common:foot" />

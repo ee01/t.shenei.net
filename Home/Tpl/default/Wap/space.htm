@@ -1,0 +1,29 @@
+<include file="header" />
+<div style='padding:2px'><p><img src='<{:sethead($user[user_head])}>' width='96px'></p>
+<php>if($user[user_id]!=$my[user_id] && $my[user_id]){</php>
+    <a href="<{:SITE_URL}>/Wap/sendprimsg/user_name/<{$user[user_name]}>/from/<{:base64_encode('space/user_name/'.$user[user_name])}>">发私信</a><span class="stamp">&nbsp;|&nbsp;</span>
+    <php>if($isfriend[$user[user_id]]==1 || $isfriend[$user[user_id]]==3){</php>
+    <a href="<{:SITE_URL}>/Wap/delfollow/user_name/<{$user[user_name]}>/from/<{:base64_encode('space/user_name/'.$user[user_name])}>">解除收听</a>
+    <php>}else{</php>
+    <a href="<{:SITE_URL}>/Wap/addfollow/user_name/<{$user[user_name]}>/from/<{:base64_encode('space/user_name/'.$user[user_name])}>">收听一下</a>
+    <php>}</php>
+<php>}</php>
+</div>
+<h2><{$user['nickname']}> 在做什么...</h2>
+<ul>
+<php>if(count($content)>0){</php>
+    <php>foreach($content as $val){
+        echo $ctent->wapli($val,$my['user_id'],'space/user_name/'.$user[user_name],1);
+    }</php>
+<php>}else{</php>
+    <span class="stamp">这里暂时还没有广播</span>
+<php>}</php>
+<div class="page"><{$page}></div>
+</ul>
+<h2><{$user['nickname']}> 的资料</h2>
+<php>if($user[user_auth]==1){</php><p><img src="<{:__PUBLIC__}>/images/viphome.png" /></p><php>}</php>
+<p>性别：<php>if($user[user_gender]){</php><{$user[user_gender]}><php>}</php></p>
+<p>城市：<php>if($user[live_city]){</php><{$user[live_city]}><php>}</php></p>
+<p>介绍：<php>if($user[user_info]){</php><{:$ctent->wapubb($user[user_info])}><php>}</php></p>
+<php>if($user[user_auth]==1){</php><p>认证说明：<{$user[auth_info]}></p><php>}</php>
+<include file="footer" />

@@ -1,0 +1,104 @@
+<include file="Common:header" />
+<table id="columns">
+<tr>
+<td id="main">
+    <div id="infohead">
+        <div class="hometip">来，说说你在做什么，想什么：</div>
+        <textarea id="contentbox" class="input_text headtextarea" onkeydown="javascript:return ctrlEnter_st(event);"><php>if(!$my[lastconttime]){</php>#新人报道#大家好，我是新加入的成员@<{$my[user_name]}> 欢迎大家来收听！<php>}</php></textarea>
+        <div class="sendbox">
+        <div id="uploadbox">
+            <div id="emotion"></div>
+            <div class="topic"><a href="javascript:void(0);" onclick="Sharetopic()">话题</a>
+            <div id="sharetopic">
+                <div class="topicbox">
+                <ul id="tabnav2"> 
+                    <a id="topic1" onclick="topicajax(1);" href="javascript:void(0)">我关注的</a>
+                    <a id="topic2" onclick="topicajax(2);" href="javascript:void(0)">推荐话题</a>
+                </ul> 
+                <ul class="tagB"></ul>
+                </div>
+            </div>
+            </div>
+            <div class="video"><a href="javascript:void(0);">视频</a>
+            <div id="sharevideo">
+                <p>请直接在微博发布框粘贴视频播放页面URL地址，或MP3/WMA音乐文件地址</p>
+	            <p>支持如下视频的站内播放：<a href="http://video.sina.com.cn/" rel="nofollow" target="_blank">新浪</a>、<a href="http://www.youku.com/" rel="nofollow" target="_blank">优酷</a>、<a href="http://v.blog.sohu.com/" rel="nofollow" target="_blank">搜狐</a>、<a href="http://www.ku6.com/" rel="nofollow" target="_blank">酷6</a>、<a href="http://www.tudou.com/" rel="nofollow" target="_blank">土豆</a>、<a href="http://tv.mofile.com/" rel="nofollow" target="_blank">魔方</a></p>
+            </div></div>
+            <div class="emos"><a href="javascript:void(0);" onclick="showemotion('emotion','contentbox')">表情</a></div>
+            <div class="photo"><a href="javascript:void(0);">照片</a>
+            <div id="sharephoto">
+                <div id="loadform" style="display:block">
+                    <div id="closephoto"></div>
+                    请选择要上传的图片：
+                    <form target="imageUpload" method="post" enctype="multipart/form-data" action="<{:SITE_URL}>/Space/uploadpic" id="upform">
+                        <input type="file" id="uploadbtn" class="uploadbtn" name="image" title="支持jpg、jpeg、gif、png格式，文件小于2M"/>
+                    </form>
+                </div>
+                <div id="priviewbtn"></div>
+                <div id="uploading"><img src='<{:__PUBLIC__}>/images/spinner.gif'> 上传中 <a href='javascript:void(0)' onclick='cencelUpload();'>[取消]</a></div>
+                <div class="clearline"></div>
+                <div id="priviewpoic"></div>
+            </div>
+            </div>
+            <iframe style="display:none;" src="about:blank" name="imageUpload" id="imageUpload"></iframe>
+            <span id="morecontent" style="display:none;"></span>
+        </div>
+        <div class="fright">
+            <div class="sendtip"><span class="sendsp">还能输入<span id="nums">140</span>字</span></div>
+            <input type="button" class="sendbutton" onclick="sendTalk()" value=""/>
+        </div>
+        </div>
+    </div>
+    <div class="contenter">
+        <div class="ad3"><{:stripslashes($site['ad3'])}></div>
+        <div class="hometitle">
+        <php>if($type=='home'){</php>
+            <span class="mine">所有广播</span>
+        <php>}else if($type=='mine'){</php>
+            <span class="mine">我的广播</span>
+        <php>}else if($type=='at'){</php>
+            <span class="at">提到我的</span>
+        <php>}else if($type=='favor'){</php>
+            <span class="favor">我的收藏</span>
+        <php>}</php>
+        <div class="fright">
+            查看类型：
+            <select id="lookmore">
+            <option value="a">所有广播</option>
+            <option value="p">图片广播</option>
+            <option value="m">媒体广播</option>
+            <option value="o">原创广播</option>
+            <option value="r">转播广播</option>
+            </select>
+        </div>
+        </div>
+        <div id="stream" class="message">
+            <ol class="wa">
+            <php>if(count($content)>0){</php>
+                <php>foreach($content as $val){
+                    if ($type=='favor') echo $ctent->loadoneli($val,0);
+                    else echo $ctent->loadoneli($val);
+                }</php>
+            <php>}else{</php>
+                <li class="unlight" id="nonemsg">这里暂时还没有广播</li>
+            <php>}</php>
+            </ol>
+        </div>
+    </div>
+</td>
+<td id="sidebar" rowspan="2"><include file="Space:homeside" /></td>
+</tr>
+<tr>
+<td height="36px">
+    <div id="indexpage" class="page"><{$page}></div>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+    $("#contentbox").focus(function(){$("#contentbox").css({border: "1px solid #7bd6f6" });});
+    $("#contentbox").blur(function(){$("#contentbox").css({border: "1px solid #b3b3b3" });});
+    $("#contentbox").focus();
+    <php>if($type=='at'){</php>$(document).ready(function(){$("#atnum").remove();closetip("t_at");});<php>}</php>
+    $("#lookmore").val('<{$t}>');
+</script>
+<include file="Common:foot" />

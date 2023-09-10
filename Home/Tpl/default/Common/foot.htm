@@ -1,0 +1,50 @@
+<php>if($my[user_id]){</php><a id="reportbutton" href="javascript:void(0)" onclick="reportbox()"></a><php>}</php>
+<php>if($my['user_id']){</php><div class="ad2"><{:stripslashes($site['ad2'])}></div><php>}</php>
+<div class="bottomLinks">
+    <div class="bL_List">
+        <div class="bL_info">  
+        <h4>找找感兴趣的人</h4>
+        <ul>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Find">找朋友</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Hot">达人排行榜</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Hot?c=<{:getcity($my[live_city],'province')}>">同城达人榜</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Find/invite">邀请好友加入</a></li>
+        </ul>
+        </div>
+        <div class="bL_info">  
+        <h4>大家正在说什么</h4>
+        <ul>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Pub">广播大厅</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Pub?t=hot">热门广播</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Pub?t=city&c=<{:getcity($my[live_city],'city')}>">同城广播</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Topic">热门话题榜</a></li>
+        </ul>
+        </div>
+        <div class="bL_info bL_io3">  
+        <h4>微博更多玩法</h4>
+        <ul>
+            <li class="MIB_linkar"><a href="<{:ET_URL}>/m">手机登陆</a></li>
+            <li class="MIB_linkar"><a href="##">短信更新</a></li>
+            <li class="MIB_linkar"><a href="##">下载客户端</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Setting/theme">设置个性模版</a></li>
+        </ul>
+        </div>
+        <div class="bL_info bL_io4">  
+        <h4>认证&合作</h4>
+        <ul>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Index/vip">微博认证</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Index/about">关于我们</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Index/about">加入我们</a></li>
+            <li class="MIB_linkar"><a href="<{:SITE_URL}>/Index/faq">新手帮助</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <a href="<{:ET_URL}>"><{$site['sitename']}></a>&nbsp;<a href="http://www.miibeian.gov.cn" target="_blank"><{$site[miibeian]}></a>&nbsp;<{:stripslashes($site["foottongji"])}><br/>
+    Powered by <a href="http://www.nextsns.com" target="_blank">EasyTalk <{:ET_VESION}></a>.&copy; 2009-2011 <a href="http://www.nextsns.com" target="_blank">Nextsns.com</a>
+</div>
+</div>
+<div class="gotop"><button onclick="indextop();" title="返回顶部"><span>返回顶部</span></button></div>
+</body>
+</html>

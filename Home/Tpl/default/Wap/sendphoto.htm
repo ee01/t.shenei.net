@@ -1,0 +1,9 @@
+<include file="header" />
+<h2>发布照片微博</h2>
+<form enctype='multipart/form-data' action='<{:SITE_URL}>/Wap/dosendphoto' method='post'>
+<p class="stamp">建议照片大小不超过500K，支持jpg、jpeg、gif、png格式。如果照片太大，建议压缩后再上传。</p>
+<p>选择照片：<input type='file' name='image'/></p>
+<p>说点什么：<input type='text' name='content'/></p>
+<p><input type='submit' value='发布' /></p>
+</form>
+<include file="footer" />

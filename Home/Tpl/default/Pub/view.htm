@@ -1,0 +1,68 @@
+<include file="Common:header" />
+<table id="columns">
+<tr>
+<td id="main">
+    <div class="contenter">
+        <div id="stream" class="message">
+            <ol class="wa" id="nolignt"><{:$ctent->loadoneli($content,1,0,1)}></ol>
+            <div class="indexh">
+                <php>if(!$content['retid']){</php>
+                    <span class="<php>if($type=='a'){</php>tabon<php>}else{</php>taboff<php>}</php>">
+                    <php>if($type!='a'){</php>
+                    <a href="<{:SITE_URL}>/v/<{$content['content_id']}>">全部(<{:($content['replytimes']+$content['zftimes'])}>)</a>
+                    <php>}else{</php>
+                    全部(<{:($content['replytimes']+$content['zftimes'])}>)
+                    <php>}</php>
+                    </span>
+                <php>}</php>
+                <span class="<php>if($type=='r'){</php>tabon<php>}else{</php>taboff<php>}</php>">
+                <php>if($type!='r'){</php>
+                <a href="<{:SITE_URL}>/v/<{$content['content_id']}>/r">评论(<{$content['replytimes']}>)</a>
+                <php>}else{</php>
+                评论(<{$content['replytimes']}>)
+                <php>}</php>
+                </span>
+                <php>if(!$content['retid']){</php>
+                    <span class="<php>if($type=='t'){</php>tabon<php>}else{</php>taboff<php>}</php>">
+                    <php>if($type!='t'){</php>
+                    <a href="<{:SITE_URL}>/v/<{$content['content_id']}>/t">转播(<{$content['zftimes']}>)</a>
+                    <php>}else{</php>
+                    转播(<{$content['zftimes']}>)
+                    <php>}</php>
+                <php>}</php>
+                </span>
+            </div>
+            <ol class="wa" id="replys">
+                <php>if(count($reply)>0){</php>
+                    <php>foreach($reply as $val){
+                        if ($val['retid']) {
+                            echo $ctent->loadoneli($val,1,0,0,1);
+                        } else {
+                            echo $ctent->loadonereply($val,1);
+                        }
+                    }</php>
+                <php>}else{
+                echo '<li class="unlight" id="nonemsg">';
+                    if($type=='a') {
+                        echo '这里还没有任何广播';
+                    } else if ($type=='t') {
+                        echo '还没有人进行转播';
+                    } else {
+                        echo '这里还没有评论';
+                    }
+                echo '</li>';
+                }</php>
+            </ol>
+        </div>
+    </div>
+</td>
+<td id="sidebar" rowspan="2"><include file="Space:proside" /></td>
+</tr>
+<tr>
+<td height="36px">
+    <div id="indexpage" class="page"><{$page}></div>
+</td>
+</tr>
+</table>
+<script type="text/javascript">replyajaxbox(<{$content['content_id']}>);</script>
+<include file="Common:foot" />

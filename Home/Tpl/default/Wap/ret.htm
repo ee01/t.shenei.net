@@ -1,0 +1,23 @@
+<include file="header" />
+<h2>转播到我的微博</h2>
+<form method='post' action='<{:SITE_URL}>/Wap/doret'>
+<p><input type='text' name='scont' value='' maxlength='140' /></p>
+<p>
+    <input type='hidden' name='cid' value='<{$content[content_id]}>' />
+    <input type='submit' value='转播' /> or <a href='<{:SITE_URL}>/Wap/<{:base64_decode($_GET[from])}>'>返回</a>
+</p>
+</form>
+<h2>广播原文</h2>
+<{:$ctent->wapli($content,$my['user_id'],'',1,0)}>
+<h2>所有转播(<{$cont}>)</h2>
+<ul>
+<php>if(count($ret)>0){</php>
+    <php>foreach($ret as $val){
+        echo $ctent->wapli($val,$my['user_id'],'',1,0);
+    }</php>
+<php>}else{</php>
+    <span class="stamp">暂时还没有人转播</span>
+<php>}</php>
+<div class="page"><{$page}></div>
+</ul>
+<include file="footer" />

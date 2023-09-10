@@ -1,0 +1,61 @@
+<include file="Common:header" />
+<script type="text/javascript" src="<{:__PUBLIC__}>/js/jquery.autocomplete.js"></script>
+<table id="columns">
+<tr>
+<td id="main">
+<div class="contenter">
+<div class="mestitle"><div class="sx">私信</div><div class="info">私信只能发送给你的听众，若想与朋友通过私信交流，请先相互收听</div></div>
+<div class="indexh">
+    <div class="fleft">
+        <div class="tabon">收件箱</div>
+        <div class="taboff"><a href="<{:SITE_URL}>/Message/sendbox">发件箱</a></div>
+    </div>
+    <div class="message">
+        共收到过 <{$count}> 封信件&nbsp;&nbsp
+        <a href="javascript:void(0);" onclick="sendprimsgbox()"><img src="<{:__PUBLIC__}>/images/sendmsg.gif"></a>
+    </div>
+    <div class="clearline"></div>
+</div>
+<div id="stream" class="message">
+    <ol class="wa">
+    <php>if($count>0){</php>
+        <php>foreach($data as $val){</php>
+        <li class="unlight">
+            <php>if($val[senduid]==0){</php>
+            <a title="系统消息" class="avatar"><img src="<{:__PUBLIC__}>/images/system.gif" alt="系统消息" /></a>
+            <php>}else{</php>
+            <a href="<{:SITE_URL}>/<{$val[user_name]}>" title="<{$val[nickname]}>" class="avatar"><img src="<{:sethead($val[user_head])}>" alt="<{$val[nickname]}>" /></a>
+            <php>}</php>
+            <div class="content">
+            <php>if($val[senduid]==0){</php>
+            <span class="grey">系统消息</span>
+            <php>}else{</php>
+            <a href="<{:SITE_URL}>/<{$val[user_name]}>" class="author <{:setvip($val[user_auth])}>"><{$val[nickname]}></a>
+            <php>}</php>
+            <h6>:</h6><div class="msgimg"><{:$ctent->ubb($val[messagebody])}><php>if($val[isread]==0){</php><font color="red" size="1">NEW</font><php>}</php></div></div>
+            <span class="stamp fleft"><{:timeop($val[sendtime])}></span> 
+            <span class="stamp op fright">
+            <php>if($my[user_id]!=$val[uid] && $val[senduid]!=0){</php>
+            <a href="javascript:void(0);" onclick="sendprimsgbox('<{$val['user_name']}>')" title="回复<{$val[nickname]}>">回信</a>&nbsp;|&nbsp;
+            <php>}</php>
+            <a href="javascript:void(0);" onclick="delmsg('<{:SITE_URL}>/Message/delmsg/mid/<{$val[message_id]}>','确实要删除此条私信吗?',this.parentNode.parentNode)">删除</a>
+            </span>
+            <div class="clearline"></div>
+        </li>
+        <php>}</php>
+    <php>}else{</php>
+        <li class="unlight" id='nonemsg'>你还没有收到过私信</li>
+    <php>}</php>
+    </ol>
+</div>
+</div>
+</td>
+<td id="sidebar" rowspan="2"><include file="Space:homeside" /></td></tr>
+<tr>
+    <td height="36px">
+        <div id="indexpage" class="page"><{$page}></div>
+    </td>
+</tr>
+</table>
+<script type="text/javascript">$(document).ready(function(){$("#msgtip").remove();closetip("t_msg");});</script>
+<include file="Common:foot" />

@@ -1,0 +1,52 @@
+<div class="contenter">
+    <div class="sect first-sect" style="margin-bottom:0px">
+        <div class="fleft" style="width:60px"><a href="<{:SITE_URL}>/Setting/face" title="修改头像"><img src="<{:sethead($my[user_head])}>" width="50px" height="50px" alt="<{$my[nickname]}>" class="imgborder"></a></div>
+        <div class="fleft">
+            <div class="sidename"><span class="<{:setvip($my[user_auth])}>"><a href="<{:SITE_URL}>/<{$my[user_name]}>/profile"><{$my[nickname]}></a></span></div>
+            <div><php>if($my[live_city]){</php><{$my[live_city]}><php>}else{</php><a href="<{:SITE_URL}>/Setting">填写您的地区</a><php>}</php></div>
+        </div>
+        <table class="sidetable">
+            <tr style="line-height:100%">
+                <td class="tz"><a href="<{:SITE_URL}>/<{$my[user_name]}>/follower"><p><b><{$my[followme_num]}></b></p><p>听众</p></a></td>
+                <td class="st"><a href="<{:SITE_URL}>/<{$my[user_name]}>/following"><p><b><{$my[follow_num]}></b></p><p>收听</p></a></td>
+                <td class="gb"><a href="<{:SITE_URL}>/<{$my[user_name]}>/mine"><p><b id="mymsgnum"><{$my[msg_num]}></b></p><p>广播</p></a></td>
+            </tr>
+        </table>
+        <php>if($my[user_auth]==1){</php>
+        <div class="userauth">
+            <div class="bg"></div>
+            <div class="body">
+            <p><img src="<{:__PUBLIC__}>/images/viphome.png" /></p>
+            <p><{$my[auth_info]}></p>
+            </div>
+        </div>
+        <php>}</php>
+    </div>
+
+    <div class="homestabs">
+        <ul class="menu">
+            <li><a href="<{:SITE_URL}>/<{$my[user_name]}>" class="home<php>if($type=='home'){</php> curt<php>}</php>">我的主页</a><b class="arr<php>if($type=='home'){</php> arrCurt<php>}</php>"></b></li>
+            <li><a href="<{:SITE_URL}>/<{$my[user_name]}>/mine" class="mytalk<php>if($type=='mine'){</php> curt<php>}</php>">我的广播</a><b class="arr<php>if($type=='mine'){</php> arrCurt<php>}</php>"></b></li>
+            <li><a href="<{:SITE_URL}>/<{$my[user_name]}>/at" class="at<php>if($type=='at'){</php> curt<php>}</php>">提到我的<php>if($my[atnum]>0){</php><span id="atnum">(<{$my[atnum]}>)</span><php>}</php></a><b class="arr<php>if($type=='at'){</php> arrCurt<php>}</php>"></b></li>
+            <li><a href="<{:SITE_URL}>/<{$my[user_name]}>/favor" class="favor<php>if($type=='favor'){</php> curt<php>}</php>">我的收藏</a><b class="arr<php>if($type=='favor'){</php> arrCurt<php>}</php>"></b></li>
+            <li><a href="<{:SITE_URL}>/Comments" class="comments<php>if($type=='comments'){</php> curt<php>}</php>">我的评论<php>if($my[comments]>0){</php><span id="commentstip">(<{$my[comments]}>)</span><php>}</php></a><b class="arr<php>if($type=='comments'){</php> arrCurt<php>}</php>"></b></li>
+            <li><a href="<{:SITE_URL}>/Message/inbox" class="pmsg<php>if($type=='message'){</php> curt<php>}</php>">私 信<php>if($my[priread]>0){</php><span id="msgtip">(<{$my[priread]}>)</span><php>}</php></a><b class="arr<php>if($type=='message'){</php> arrCurt<php>}</php>"></b></li>
+        </ul>
+    </div>
+
+    <div class="clearline"></div>
+    
+    <php>if($usertopic){</php>
+    <div class="sect">
+        <h2>关注的话题<em>(<{:count($usertopic)}>)</em></h2>
+        <ul class="ulist" id="mytopic">
+        <php>foreach($usertopic as $val){</php>
+        <li><span class="fleft"><a href="<{:SITE_URL}>/k/<{$val['topic']}>"><{$val['topic']}></a></span><span class="num" style="display:none"><a href="javascript:void(0);" onclick="fltopic('<{$val['topic']}>','确认要解除关注该话题？','jc',this.parentNode.parentNode)" title="取消关注该话题">x</a></span><span class="clearline"></span></li>
+        <php>}</php>
+        </ul>
+    </div>
+    <php>}</php>
+
+    <!-- 用户侧边 -->
+    <{$userside}>
+</div>

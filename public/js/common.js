@@ -46,9 +46,9 @@ $(document).ready(function(){
     $('#lookmore').change(function(){
         var conttype=$(this).val();
         if (space) {
-            window.location.href=siteurl.replace('.htm', '')+'_2f'+user_name+'_2f'+space+'_2f'+conttype+'.htm';
+            window.location.href=siteurl+'/'+user_name+'/'+space+'/'+conttype;
         } else {
-            window.location.href=siteurl.replace('.htm', '')+'_2f'+user_name+'_2f'+conttype+'.htm';
+            window.location.href=siteurl+'/'+user_name+'/'+conttype;
         }
     });
     $('#topcity').change(function(){
@@ -116,7 +116,7 @@ function picctrl(){
 /*emotion*/
 function closetip(id) {
     $("#"+id).remove();
-    if ($('.tipmsg >.tips > p').length<=0) {
+    if ($('.tipmsg > .tips > p').length<=0) {
         $(".tipmsg").remove();
     }
 }
@@ -848,17 +848,17 @@ copy2Clipboard=function(txt){
             netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
         }
         catch(e){
-            alert("您的firefox安全限制限制您进行剪贴板操作，请打开'about:config'将signed.applets.codebase_principal_support'设置为true'_25E4_25B9_258B_25E5_2590_258E_25E9_2587_258D_25E8_25AF_2595_25EF_25BC_258C_25E7_259B_25B8_25E5_25AF02683FA3EC");
+            alert("您的firefox安全限制限制您进行剪贴板操作，请打开'about:config'将signed.applets.codebase_principal_support'设置为true'之后重试，相对路径为firefox根目录/greprefs/all.js");
             return false;
         }
-        var clip=Components.classes['_40mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+        var clip=Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
         if(!clip){return;}
-        var trans=Components.classes['_40mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+        var trans=Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
         if(!trans){return;}
         trans.addDataFlavor('text/unicode');
         var str=new Object();
         var len=new Object();
-        var str=Components.classes["_40mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+        var str=Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
         var copytext=txt;str.data=copytext;
         trans.setTransferData("text/unicode",str,copytext.length*2);
         var clipid=Components.interfaces.nsIClipboard;

@@ -1,0 +1,31 @@
+<div class="contenter">
+    <div class="sect first-sect">
+        <h2>个人资料</h2>
+        <php>if($user[user_gender]){</php><{$user[user_gender]}>，<php>}</php>
+        <php>if($user[live_city]){</php><{$user[live_city]}><php>}</php>
+        <p class="userurl">介绍：<{:$ctent->ubb($user[user_info]?$user[user_info]:'这家伙很懒，什么都没有写！')}></p>
+        <php>if($user[user_auth]==1){</php>
+        <div class="userauth">
+            <div class="bg"></div>
+            <div class="body">
+            <p><img src="<{:__PUBLIC__}>/images/viphome.png" /></p>
+            <p><{$user[auth_info]}></p>
+            </div>
+        </div>
+        <php>}</php>
+    </div>
+    
+    <php>if($usertopic){</php>
+    <div class="sect">
+        <h2>关注的话题<em>(<{:count($usertopic)}>)</em></h2>
+        <ul class="ulist">
+        <php>foreach($usertopic as $val){</php>
+        <li><a href="<{:SITE_URL}>/k/<{$val['topic']}>"><{$val['topic']}></a></li>
+        <php>}</php>
+        </ul>
+    </div>
+    <php>}</php>
+
+    <!-- 用户侧边 -->
+    <{$userside}>
+</div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="<{$keyword}><{$site['seokey']}>" />
+<meta name="description" content="<php>if($description){</php><{$description}><php>}else{</php><{$site['seodescription']}><php>}</php>" />
+<title><php>if($subname){echo($subname.'_');}</php><{$site['sitename']}> - <{$site['subtitle']}></title>
+<link rel="shortcut icon" href="<{:__PUBLIC__}>/images/favicon.ico" />
+<script type="text/javascript">var etuser='{"siteurl":"<{:SITE_URL}>","pubdir":"<{:__PUBLIC__}>","setok":"<{$setok}>","my_uid":"<{$my[user_id]}>","user_name":"<{:$user[user_name]?$user[user_name]:$my[user_name]}>","nickname":"<{:$user[nickname]?$user[nickname]:$my[nickname]}>","space":"<{$type}>"}';var stalk='<{$sendtalk}>';var shorturl='<php>if($site[shortserver]<=1){</php><{:shortserver($site[shortserver])}><php>}else{</php><{$site[shorturl]}><php>}</php>';</script>
+<script type="text/javascript" src="<{:__PUBLIC__}>/js/jquery.js"></script>
+<script type="text/javascript" src="<{:__PUBLIC__}>/js/common.js"></script>
+<script type="text/javascript" src="<{:__PUBLIC__}>/js/extends.js"></script>
+<script type="text/javascript" src="<{:__PUBLIC__}>/js/ye_dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="<{:__PUBLIC__}>/js/highslide/highslide.css" />
+<link rel="stylesheet" type="text/css" href="<{:__PUBLIC__}>/images/style.css" />
+<!--[if lte IE 6]>
+<style type="text/css">
+#header .left{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='<{:__PUBLIC__}>/images/logo.png');background:none;cursor:pointer}
+#header .topmenubg{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='<{:__PUBLIC__}>/images/topmenu.png');background:none;}
+#navbg {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale',src='<{:__PUBLIC__}>/images/headbg.png');background:none;}
+#sidebar .homestabs .menu li .arrHover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='<{:__PUBLIC__}>/images/sidemenuArr_over.png');background:none;}
+#sidebar .homestabs .menu li .arrCurt{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='<{:__PUBLIC__}>/images/sidemenuArr.png');background:none}
+#sidebar .sect {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src='<{:__PUBLIC__}>/images/dot.png');background:none;}
+.newst {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='<{:__PUBLIC__}>/images/newst.png');background:none;}
+</style>
+<![endif]-->
+<style type="text/css"><{$usertemp}></style>
+</head>
+
+<body>
+<php>if($my['user_id']){</php>
+<div id="navbg"></div>
+<div id="container" class="newlook">
+<div id="header">
+    <div id="navigation">
+        <ul>
+            <li <php>if($menu=='pub'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/Pub">广播大厅</a></li>
+            <li <php>if($menu=='hot'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/Hot">排行榜</a></li>
+            <li <php>if($menu=='finder'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/Find">找朋友</a></li>
+            <li <php>if($menu=='invite'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/Find/invite">邀请</a></li>
+            <php>if ($site[googlemapopen]==1 || $site[widgetopen]==1 || $site[wapopen]==1){</php>
+            <li id="plugins"><a class="nohover" href="javascript:void(0);">工具<span class="arr_d"><em class="b1">&nbsp;</em><em class="b2">&nbsp;</em><em class="b3">&nbsp;</em></span></a>
+            <div class="subNav" style="display:none;">
+            <php>if ($site[googlemapopen]==1){</php><p><a href="<{:SITE_URL}>/Plugins/map">地图微博</a></p><php>}</php>
+            <php>if ($site[widgetopen]==1){</php><p><a href="<{:SITE_URL}>/Plugins">博客挂件</a></p><php>}</php>
+            <php>if ($site[wapopen]==1){</php><p><a href="<{:ET_URL}>/m">手机WAP</a></p><php>}</php>
+            </div>
+            </li>
+            <php>}</php>
+            <li class="fright"><a href="<{:SITE_URL}>/logout">退出</a></li>
+            <php>if($my['isadmin']==1){</php><li class="fright"><a href="<{:ET_URL}>/admin.php">后台管理</a></li><php>}</php>
+            <li class="fright <php>if($type=='message'){</php>selected<php>}</php>"><a href="<{:SITE_URL}>/Message/inbox">私信</a> | </li>
+            <li class="fright <php>if($menu=='theme'){</php>selected<php>}</php>"><a href="<{:SITE_URL}>/Setting/theme">模板</a></li>
+            <li class="fright <php>if($menu=='setting'){</php>selected<php>}</php>"><a href="<{:SITE_URL}>/Setting">设置</a></li>
+            <li class="fright <php>if($menu=='profile'){</php>selected<php>}</php>"><a href="<{:SITE_URL}>/<{$my[user_name]}>/profile"><{$my[nickname]}><php>if($my['userlock']==2){</php><b>[禁言]</b><php>}</php></a></li>
+        </ul>
+    </div>
+    <php>if($site['loginindex']=='home'){</php><a href="<{:SITE_URL}>/<{$my['user_name']}>">
+    <php>}else{</php><a href="<{:SITE_URL}>/Pub">
+    <php>}</php><div class="left"></div></a>
+    <php>if($my[priread]>0 || $my[comments]>0 || $my[newfollownum]>0 || $my[atnum]>0){</php>
+        <div class="tipmsg">
+        <div class="tips">
+        <php>if($my[priread]>0){</php><p id="t_msg">您有<{$my[priread]}>条未读私信，<a href="<{:SITE_URL}>/Message/inbox">查看私信</a></p><php>}</php>
+        <php>if($my[comments]>0){</php><p id="t_comment">您有<{$my[comments]}>条未读评论，<a href="<{:SITE_URL}>/Comments">查看评论</a></p><php>}</php>
+        <php>if($my[newfollownum]>0){</php><p id="t_follow">有<{$my[newfollownum]}>个用户收听了您，<a href="<{:SITE_URL}>/<{$my[user_name]}>/follower">查看听众</a></p><php>}</php>
+        <php>if($my[atnum]>0){</php><p id="t_at">有<{$my[atnum]}>条提到您的广播，<a href="<{:SITE_URL}>/<{$my[user_name]}>/at">查看广播</a></p><php>}</php>
+        </div>
+        <div class="close"><a href="javascript:void(0)" onclick="$('.tipmsg').remove();">x</a></div>
+        </div>
+    <php>}</php>
+    <div class="topmenubg"></div>
+    <div class="topmenu">
+        <ul>
+            <li <php>if($menu=='home'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/<{$my['user_name']}>">我的首页</a> | </li>
+            <li <php>if($menu=='profile'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/<{$my[user_name]}>/profile">我的微博</a> | </li>
+            <li <php>if($menu=='follow'){</php>class="selected"<php>}</php>><a href="<{:SITE_URL}>/<{$my[user_name]}>/following">关系</a></li>
+            <li>
+                <div id="searchr">
+                    <select id="commonsearch" class="select"><option value="talk">广播</option><option value="user">用户</option></select>
+                    <input type="text" id="searchr-input" name="q" value="<php>if(!$_GET['q']){</php>请输入关键字<php>}else{</php><{$_GET['q']}><php>}</php>" onfocus="this.value=''" onkeydown= "if(event.keyCode==13){dosearch()}"/>
+                    <input type="button" id="searchr-submit" value="搜 索" onclick="dosearch();" />
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="ad1"><{:stripslashes($site['ad1'])}></div>
+<php>}else{</php>
+<div id="container" class="newlook">
+<div id="header2">
+    <php>if($site['loginindex']=='home'){</php><a href="<{:SITE_URL}>/<{$my['user_name']}>"><php>}else{</php><a href="<{:SITE_URL}>/Pub"><php>}</php><div class="left"></div></a>
+</div>
+<php>}</php>
+<div class="clearline"></div>

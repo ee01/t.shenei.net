@@ -1,0 +1,44 @@
+<include file="Common:header" />
+<form action='<{:SITE_URL}>/admin.php?s=/Setting/webset' method="POST">
+<h3>谷歌地图设置</h3>
+<table style="margin:5px 0 20px 0;line-height:250%">
+<tr>
+    <td width="120px">开启谷歌地图插件</td>
+    <td>
+    <input type="radio" name="site[googlemapopen]" value="0" <php>if($site['googlemapopen']['contents']==0){</php>checked<php>}</php>> 关闭&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="site[googlemapopen]" value="1" <php>if($site['googlemapopen']['contents']==1){</php>checked<php>}</php>> 开启
+    </td>
+    <td class="info"></td>
+</tr>
+<tr>
+    <td>谷歌地图API KEY</td>
+    <td><input type="text" name="site[googlekey]" class="txt_input" value="<{$site['googlekey']['contents']}>"></td>
+    <td class="info">● <{$site['googlekey']['description']}></td>
+</tr>
+</table>
+<h3>博客挂件</h3>
+<table style="margin:5px 0 20px 0;line-height:250%">
+<tr>
+    <td width="120px">开启博客挂件</td>
+    <td>
+    <input type="radio" name="site[widgetopen]" value="0" <php>if($site['widgetopen']['contents']==0){</php>checked<php>}</php>> 关闭&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="site[widgetopen]" value="1" <php>if($site['widgetopen']['contents']==1){</php>checked<php>}</php>> 开启
+    </td>
+    <td class="info">&nbsp;</td>
+</tr>
+</table>
+<h3>手机WAP</h3>
+<table style="margin:5px 0 20px 0;line-height:250%">
+<tr>
+    <td width="120px">开启手机WAP</td>
+    <td>
+    <input type="radio" name="site[wapopen]" value="0" <php>if($site['wapopen']['contents']==0){</php>checked<php>}</php>> 关闭&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="site[wapopen]" value="1" <php>if($site['wapopen']['contents']==1){</php>checked<php>}</php>> 开启
+    </td>
+    <td class="info">&nbsp;</td>
+</tr>
+</table>
+<input type="hidden" name="reurl" value="Setting/plugins">
+<input type="submit" class="button1 submit" value="保存提交">
+</form>
+<include file="Common:foot" />

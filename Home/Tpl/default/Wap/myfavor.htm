@@ -1,0 +1,14 @@
+<include file="header" />
+<h2>我的收藏</h2>
+<ul>
+<php>if(count($content)>0){</php>
+    <php>foreach($content as $val){
+        echo $ctent->wapli($val,$my['user_id'],'myfavor',1,1,1);
+    }</php>
+<php>}else{</php>
+    <span class="stamp">这里暂时还没有收藏</span>
+<php>}</php>
+<div class="page"><{$page}></div>
+</ul>
+</div>
+<include file="footer" />

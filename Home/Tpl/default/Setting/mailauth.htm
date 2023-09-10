@@ -1,0 +1,45 @@
+<include file="Common:header" />
+<table id="columns">
+<tr>
+<td id="main" style="-moz-border-radius-bottomleft:8px;">
+<div class="contenter">
+    <div class="indexh">
+        <div class="taboff"><a href="<{:SITE_URL}>/Setting">基本设置</a></div>
+        <div class="taboff"><a href="<{:SITE_URL}>/Setting/face">修改头像</a></div>
+        <div class="taboff"><a href="<{:SITE_URL}>/Setting/account">修改密码</a></div>
+        <div class="tabon"><a href="<{:SITE_URL}>/Setting/mailauth">邮箱验证</a></div>
+        <div class="taboff"><a href="<{:SITE_URL}>/Setting/theme">模 板</a></div>
+    </div>
+    <div class="mailauthbox">
+    <form method="post" action="<{:SITE_URL}>/Setting/domailauth">
+        <p>
+        <php>if($my[auth_email]==0){</php>
+            你的 Email 还未通过验证，请到
+            <strong><{$my[mailadres]}></strong>
+            查收验证信，并点击其中的链接完成验证； 如果没有收到，可以重发验证信。
+            <input type="submit" class="button2" value="发送认证" />
+        <php>}else{</php>
+            你的 Email 已经通过认证
+        <php>}</php>
+        </p>
+    </form>
+    </div>
+    <form method="post" action="<{:SITE_URL}>/Setting/changemail" class="vf lf">
+        <p>
+            <label class="label_input" for="oldmail">旧 Email </label>
+            <input tabindex="1" type="text" id="oldmail" class="input_text" value="<{$my[mailadres]}>" disabled="disabled"/>
+        </p>
+        <p>
+            <label class="label_input" for="newmail">新 Email </label>
+            <input tabindex="2" type="text" id="newmail" name="email" class="input_text" />
+        </p>
+        <p>
+            <input tabindex="3" type="submit" class="button1" value="修改邮箱" />
+        </p>
+    </form>
+</div>
+</td>
+<td id="sidebar"><include file="Space:homeside"/></td>
+</tr>
+</table>
+<include file="Common:foot" />

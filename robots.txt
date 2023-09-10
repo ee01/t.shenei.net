@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /Admin/
+Disallow: /api/
+Disallow: /client/
+Disallow: /Home/
+Disallow: /Public/
+Disallow: /ThinkPHP/
+Disallow: /m/
+Disallow: /url/
+Disallow: /admin.php

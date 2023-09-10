@@ -1,0 +1,14 @@
+<include file="header" />
+<h2>提到我的</h2>
+<ul>
+<php>if(count($content)>0){</php>
+    <php>foreach($content as $val){
+        echo $ctent->wapli($val,$my['user_id'],'at',1);
+    }</php>
+<php>}else{</php>
+    <span class="stamp">这里暂时还没有广播</span>
+<php>}</php>
+<div class="page"><{$page}></div>
+</ul>
+</div>
+<include file="footer" />

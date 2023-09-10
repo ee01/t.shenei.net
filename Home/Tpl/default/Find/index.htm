@@ -1,0 +1,42 @@
+<include file="Common:header" />
+<div class="friends">
+    <div class="indexh">
+        <div class="tabon">找朋友</div>
+        <div class="taboff"><a href="<{:SITE_URL}>/Find/invite">邀请好友</a></div>
+    </div>
+    <div id="stream" class="message">
+        <div class="searchbox">
+        <div style="padding:15px 50px">
+            <div style="color:#999999;margin-bottom:5px">你在找谁？请输入对方的姓名或帐号</div>
+            <form method="POST" action="<{:SITE_URL}>/Find/search">
+                <input class="input_text" type="text" style="width:300px" name="sname" value=""/>
+                <input class="button2" type="submit" value="点击搜索"/>
+           </form>
+           <div style="margin-top:5px">想找更多的朋友来分享微博吗？马上<a href="<{:SITE_URL}>/Find/invite">邀请好友开通</a></div>
+        </div>
+        </div>
+        <table border="0" width="100%" height="550px">
+        <tr>
+        <td valign="top">
+            <h3><img src="<{:__PUBLIC__}>/images/invite.gif"> 推荐您认识</h3>
+            <div class="finder">
+                <php>if($t==1){</php><div class="tabon">认证用户</div><php>}else{</php><div class="taboff"><a href="<{:SITE_URL}>/Find?t=1">认证用户</a></div><php>}</php>
+                <php>if($t==2){</php><div class="tabon">推荐用户</div><php>}else{</php><div class="taboff"><a href="<{:SITE_URL}>/Find?t=2">推荐用户</a></div><php>}</php>
+                <php>if($t==3){</php><div class="tabon">同城用户</div><php>}else{</php><div class="taboff"><a href="<{:SITE_URL}>/Find?t=3">同城用户</a></div><php>}</php>
+            </div>
+            <div class="finderr">
+                <php>if(count($user)>0){</php>
+                <ul class="alistM">
+                <php>foreach($user as $val){</php><{:$uModel->alist($val,$my['user_id'],0);}><php>}</php>
+                </ul>
+                <php>}else{</php>
+                    <div style="text-align:center;margin-top:100px">这里暂时还没有推荐用户</div>
+                <php>}</php>
+            </div>
+        </td>
+        </tr>
+        </table>
+    </div>
+    <div class="clearline"></div>
+</div>
+<include file="Common:foot" />

@@ -30,7 +30,7 @@ small {color:#999}
 .mestitle .sx {font-size:14px;font-weight:bold;float:left}
 .mestitle .info {font-size:14p2;float:right;color:#999999}
 .commenttitle {background:url('comments.gif') 0 4px no-repeat;text-indent:25px;height:30px;width:537px;font-size:14px;font-weight:bold}
-#pmessage {margin:0px 20px;background:url("letterbg.png") no-repeat left bottom;}
+#pmessage {margin:0px 20px;background:url("letterBg.png") no-repeat left bottom;}
 #pmessage em {position:relative;top:-5px;font-family:Georgia,Tahoma,Arial;font-size:26px;vertical-align:middle}
 #pmessage p {float:right;margin-top:10px}
 #pmessage .tip1 {color:#999999;margin-left:10px}
@@ -351,8 +351,8 @@ td#main .contenter {padding:12px 15px 15px 15px}
 #sidebar .homestabs .menu li a:hover{color:#000;text-decoration:none;}
 #sidebar .homestabs .menu li a.curt{font-weight:bold;color:#000;}
 #sidebar .homestabs .menu li .arr{position:absolute;width:225px;height:41px;display:none;left:-18px;top:-3px;z-index:1;}
-#sidebar .homestabs .menu li .arrHover{background:url('sidemenuarr_over.png') no-repeat;display:block;margin-top:2px}
-#sidebar .homestabs .menu li .arrCurt{background:url('sidemenuarr.png') no-repeat;display:block;margin-top:2px}
+#sidebar .homestabs .menu li .arrHover{background:url('sidemenuArr_over.png') no-repeat;display:block;margin-top:2px}
+#sidebar .homestabs .menu li .arrCurt{background:url('sidemenuArr.png') no-repeat;display:block;margin-top:2px}
 #sidebar .homestabs .menu .home {background:url('home.png') no-repeat 10px 8px;text-indent:20px}
 #sidebar .homestabs .menu .mytalk {background:url('homeview1.gif') no-repeat 13px 10px;text-indent:20px}
 #sidebar .homestabs .menu .at {background:url('at.gif') no-repeat 10px 11px;text-indent:20px}
