@@ -7,7 +7,7 @@ a {color:#247aac;text-decoration:none}
 a:hover {text-decoration:underline;}
 
 .main {width:950px; margin:0 auto 20px auto}
-.main #header {background:url('logo.png') no-repeat;width:200px;height:65px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='corp', src='Public/images/logo.png');_background:none;margin:10px 0px;}
+.main #header {background:url('logo.png') no-repeat;width:200px;height:65px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='corp', src='public/images/logo.png');_background:none;margin:10px 0px;}
 .main .weltop {background:url('wel_top.jpg') no-repeat;width:950px;height:274px;}
 .main .welbody {background:#ffffff url('theme-titlebg.gif') repeat-x;width:950px;height:270px;padding-top:15px}
 .main .welbottom {background:url('wel_bottom.gif') no-repeat;width:950px;height:16px;}

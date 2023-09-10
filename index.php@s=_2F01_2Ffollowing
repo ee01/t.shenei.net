@@ -5,23 +5,23 @@
 <meta name="keywords" content="迷你博客,微博客,开源迷你博客" />
 <meta name="description" content="直播你的生活" />
 <title>01收听的人_舍内一句话 - In a word</title>
-<link rel="shortcut icon" href="Public/images/favicon.ico" />
+<link rel="shortcut icon" href="public/images/favicon.ico" />
 <script type="text/javascript">var etuser='{"siteurl":"index.php@s=","pubdir":"Public","setok":"-1","my_uid":"","user_name":"01","nickname":"01","space":""}';var stalk='';var shorturl='http://goo.gl/';</script>
-<script type="text/javascript" src="Public/js/jquery.js"></script>
-<script type="text/javascript" src="Public/js/common.js"></script>
-<script type="text/javascript" src="Public/js/extends.js"></script>
-<script type="text/javascript" src="Public/js/ye_dialog.js"></script>
-<link rel="stylesheet" type="text/css" href="Public/js/highslide/highslide.css" />
-<link rel="stylesheet" type="text/css" href="Public/images/style.css" />
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/common.js"></script>
+<script type="text/javascript" src="public/js/extends.js"></script>
+<script type="text/javascript" src="public/js/ye_dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="public/js/highslide/highslide.css" />
+<link rel="stylesheet" type="text/css" href="public/images/style.css" />
 <!--[if lte IE 6]>
 <style type="text/css">
-#header .left{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='http://t.shenei.net/Public/images/logo.png');background:none;cursor:pointer}
-#header .topmenubg{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='http://t.shenei.net/Public/images/topmenu.png');background:none;}
-#navbg {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale',src='http://t.shenei.net/Public/images/headbg.png');background:none;}
-#sidebar .homestabs .menu li .arrHover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='http://t.shenei.net/Public/images/sidemenuArr_over.png');background:none;}
-#sidebar .homestabs .menu li .arrCurt{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='http://t.shenei.net/Public/images/sidemenuArr.png');background:none}
-#sidebar .sect {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src='http://t.shenei.net/Public/images/dot.png');background:none;}
-.newst {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='http://t.shenei.net/Public/images/newst.png');background:none;}
+#header .left{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='http://t.shenei.net/public/images/logo.png');background:none;cursor:pointer}
+#header .topmenubg{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='http://t.shenei.net/public/images/topmenu.png');background:none;}
+#navbg {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale',src='http://t.shenei.net/public/images/headbg.png');background:none;}
+#sidebar .homestabs .menu li .arrHover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='http://t.shenei.net/public/images/sidemenuArr_over.png');background:none;}
+#sidebar .homestabs .menu li .arrCurt{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='http://t.shenei.net/public/images/sidemenuArr.png');background:none}
+#sidebar .sect {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src='http://t.shenei.net/public/images/dot.png');background:none;}
+.newst {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='http://t.shenei.net/public/images/newst.png');background:none;}
 </style>
 <![endif]-->
 <style type="text/css">body {}</style>
@@ -78,7 +78,7 @@
                 <div class="userauth">
             <div class="bg"></div>
             <div class="body">
-            <p><img src="Public/images/viphome.png" /></p>
+            <p><img src="public/images/viphome.png" /></p>
             <p>网站管理员</p>
             </div>
         </div>

@@ -5,9 +5,9 @@
 <meta name="keywords" content="迷你博客,微博客,开源迷你博客" />
 <meta name="description" content="直播你的生活" />
 <title>舍内一句话 - In a word</title>
-<link rel="shortcut icon" href="Public/images/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="Public/images/welcome.css" />
-<script type="text/javascript" src="Public/js/jquery.js"></script>
+<link rel="shortcut icon" href="public/images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="public/images/welcome.css" />
+<script type="text/javascript" src="public/js/jquery.js"></script>
 </head>
 
 <body>
@@ -42,10 +42,10 @@
             <input type="hidden" name="__hash__" value="1bbfd6ce4f38ea5a899c5bf9bf41331b" /></form>
         </div>
         <div class="rightbox_2">
-            <p><img src="Public/images/phone.png">&nbsp;&nbsp;如何用手机上微博</p>
+            <p><img src="public/images/phone.png">&nbsp;&nbsp;如何用手机上微博</p>
             <p style="text-indent:24px">http://t.shenei.net/m</p>
-            <p><img src="Public/images/help.gif">&nbsp;&nbsp;新手帮助：<a href="index.php@s=_2FIndex_2Ffaq">点击进入</a></p>
-            <p><img src="Public/images/favor.gif">&nbsp;&nbsp;关于我们：<a href="index.php@s=_2FIndex_2Fabout">点击进入</a></p>
+            <p><img src="public/images/help.gif">&nbsp;&nbsp;新手帮助：<a href="index.php@s=_2FIndex_2Ffaq">点击进入</a></p>
+            <p><img src="public/images/favor.gif">&nbsp;&nbsp;关于我们：<a href="index.php@s=_2FIndex_2Fabout">点击进入</a></p>
         </div>
     </div>
     <div class="weltop">
@@ -58,7 +58,7 @@
         </div>
         <div class="hottalk">
             <div class="theysay">他们正在说：</div>
-            <div class="marqueegb"><ul><li><div class="indexgbli"><table border="0" width="100%"><tr><td width="60px" valign="top"><a href="index.php@s=_2F01"><img src="./uc.shenei.net/avatar.php@uid=1&size=middle"></a></td><td valign="top"><a href="index.php@s=_2F01" class="vip">01</a>&nbsp;&nbsp;a a@e5201 <img class='emo' src='Public/images/emotion/6.gif' alt='(大笑)'><div class="sp">04月17日 16:18&nbsp;&nbsp;通过网页</div></td></tr></table></div></li></ul></div>
+            <div class="marqueegb"><ul><li><div class="indexgbli"><table border="0" width="100%"><tr><td width="60px" valign="top"><a href="index.php@s=_2F01"><img src="./uc.shenei.net/avatar.php@uid=1&size=middle"></a></td><td valign="top"><a href="index.php@s=_2F01" class="vip">01</a>&nbsp;&nbsp;a a@e5201 <img class='emo' src='public/images/emotion/6.gif' alt='(大笑)'><div class="sp">04月17日 16:18&nbsp;&nbsp;通过网页</div></td></tr></table></div></li></ul></div>
         </div>
     </div>
     <div class="welbottom"></div>

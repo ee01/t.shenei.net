@@ -5,23 +5,23 @@
 <meta name="keywords" content="01的微博,迷你博客,微博客,开源迷你博客" />
 <meta name="description" content="直播你的生活" />
 <title>舍内一句话 - In a word</title>
-<link rel="shortcut icon" href="Public/images/favicon.ico" />
+<link rel="shortcut icon" href="public/images/favicon.ico" />
 <script type="text/javascript">var etuser='{"siteurl":"index.php@s=","pubdir":"Public","setok":"-1","my_uid":"","user_name":"01","nickname":"01","space":"profile"}';var stalk='';var shorturl='http://goo.gl/';</script>
-<script type="text/javascript" src="Public/js/jquery.js"></script>
-<script type="text/javascript" src="Public/js/common.js"></script>
-<script type="text/javascript" src="Public/js/extends.js"></script>
-<script type="text/javascript" src="Public/js/ye_dialog.js"></script>
-<link rel="stylesheet" type="text/css" href="Public/js/highslide/highslide.css" />
-<link rel="stylesheet" type="text/css" href="Public/images/style.css" />
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/common.js"></script>
+<script type="text/javascript" src="public/js/extends.js"></script>
+<script type="text/javascript" src="public/js/ye_dialog.js"></script>
+<link rel="stylesheet" type="text/css" href="public/js/highslide/highslide.css" />
+<link rel="stylesheet" type="text/css" href="public/images/style.css" />
 <!--[if lte IE 6]>
 <style type="text/css">
-#header .left{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='Public/images/logo.png');background:none;cursor:pointer}
-#header .topmenubg{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='Public/images/topmenu.png');background:none;}
-#navbg {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale',src='Public/images/headbg.png');background:none;}
-#sidebar .homestabs .menu li .arrHover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='Public/images/sidemenuArr_over.png');background:none;}
-#sidebar .homestabs .menu li .arrCurt{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='Public/images/sidemenuArr.png');background:none}
-#sidebar .sect {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src='Public/images/dot.png');background:none;}
-.newst {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='Public/images/newst.png');background:none;}
+#header .left{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='public/images/logo.png');background:none;cursor:pointer}
+#header .topmenubg{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='public/images/topmenu.png');background:none;}
+#navbg {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale',src='public/images/headbg.png');background:none;}
+#sidebar .homestabs .menu li .arrHover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='public/images/sidemenuArr_over.png');background:none;}
+#sidebar .homestabs .menu li .arrCurt{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='public/images/sidemenuArr.png');background:none}
+#sidebar .sect {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src='public/images/dot.png');background:none;}
+.newst {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src='public/images/newst.png');background:none;}
 </style>
 <![endif]-->
 <style type="text/css">body {}</style>
@@ -40,7 +40,7 @@
     <p>舍内一句话称之微博也好，便签也好，这里记录的这些小声音都会成为难忘的记忆。在这里，你可以通过手机、网页等随时随地发消息，时时刻刻看朋友。关注01的最新消息。</p>
     </div>
     <div class='right'>
-    <a href="index.php@s=_2Fregister_2F01"><img src="Public/images/button-register.gif" alt="注册"></a><br/>有帐号了，请<a href="index.php@s=_2Flogin">点击这里登陆</a>
+    <a href="index.php@s=_2Fregister_2F01"><img src="public/images/button-register.gif" alt="注册"></a><br/>有帐号了，请<a href="index.php@s=_2Flogin">点击这里登陆</a>
     </div>
 </div>
 </div>
@@ -80,7 +80,7 @@
         </div>
         <div id="stream" class="message">
             <ol class="wa">
-                            <li class="unlight"><a href="index.php@s=_2F01" title="01" class="avatar"><img src="./uc.shenei.net/avatar.php@uid=1&size=middle" alt="01" /></a><div class=""><div class="content"><a href="index.php@s=_2F01" class="author vip">01</a><h6>:</h6><span id="cont1">a a_40e5201 _3Cimg class='emo' src='Public/images/emotion/6.gif' alt='(大笑)'></span></div><span class="stamp fleft"><a href="index.php@s=_2Fv_2F1" class="ctime" title="2011年04月17日 16:18">04月17日 16:18</a>&nbsp;通过网页&nbsp;&nbsp;</span><span class="stamp op" style="float:right;white-space:nowrap"><a href="javascript:void(0)" onclick="retwit('1')">转播</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0)" onclick="replyajax('1')">评论</a>&nbsp;&nbsp;|&nbsp;<a class="fav" href="javascript:void(0)" onclick="dofavor('1')" title="添加到我的收藏">收藏</a></span><div class="clearline"></div><span id="reply_1" class="replyspan"></span></div></li>                        </ol>
+                            <li class="unlight"><a href="index.php@s=_2F01" title="01" class="avatar"><img src="./uc.shenei.net/avatar.php@uid=1&size=middle" alt="01" /></a><div class=""><div class="content"><a href="index.php@s=_2F01" class="author vip">01</a><h6>:</h6><span id="cont1">a a_40e5201 _3Cimg class='emo' src='public/images/emotion/6.gif' alt='(大笑)'></span></div><span class="stamp fleft"><a href="index.php@s=_2Fv_2F1" class="ctime" title="2011年04月17日 16:18">04月17日 16:18</a>&nbsp;通过网页&nbsp;&nbsp;</span><span class="stamp op" style="float:right;white-space:nowrap"><a href="javascript:void(0)" onclick="retwit('1')">转播</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0)" onclick="replyajax('1')">评论</a>&nbsp;&nbsp;|&nbsp;<a class="fav" href="javascript:void(0)" onclick="dofavor('1')" title="添加到我的收藏">收藏</a></span><div class="clearline"></div><span id="reply_1" class="replyspan"></span></div></li>                        </ol>
         </div>
     </div>
 </td>
@@ -91,7 +91,7 @@
                 <div class="userauth">
             <div class="bg"></div>
             <div class="body">
-            <p><img src="Public/images/viphome.png" /></p>
+            <p><img src="public/images/viphome.png" /></p>
             <p>网站管理员</p>
             </div>
         </div>
